@@ -49,7 +49,7 @@
 					<li>第三个列表，请试一下将鼠标放到文字上，将显示全部文字内容。</li>
 					<li>这是一个列表，文字未超出</li>
 					<li>第五个列表，请试一下将鼠标放到文字上，将显示全部文字内容。</li>
-					<li>这是一个列表，文字未超出</li>
+					<li>Hello, I am not too long for the clientwidth. Ha!</li>
 				</ul>
 			</div>
 		</div>
@@ -61,22 +61,20 @@
 		for(var i = 0; i < list.length; i++) {
 			var txt = list[i].innerText || list[i].textContent;
 			txtArr.push(txt);
-			var tooLong = [1, 2, 4]; //指出哪几个是超出长度的；
-			for(var j = 0; j < tooLong.length; j++) {
-				var num = tooLong[j];
+			if (list[i].scrollWidth>list[i].clientWidth) {
 				(function(n) {
-					list[num].onmouseover = function() {
+					list[i].onmouseover = function() {
 						var s = list[n].innerHTML + " ";
 						t = setInterval(function() {
 							list[n].innerHTML = s.substring(1, s.length);
 							s = s.substring(1, s.length) + s.substring(0, 1);
 						}, 500);
 					};
-					list[num].onmouseout = function() {
+					list[i].onmouseout = function() {
 						clearInterval(t);
 						list[n].innerHTML = txtArr[n]
 					};
-				})(num);
+				})(i);
 			}
 		}
 	</script>
