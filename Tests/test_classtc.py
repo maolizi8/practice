@@ -5,6 +5,7 @@ Created on 2017-07-22
 '''
 
 import pytest
+import os
 
 class TestClass:
     '''测试类'''
@@ -21,5 +22,8 @@ class TestClass:
         assert hasattr(x, 'check')
         
 if __name__ == '__main__':
-    args=['-q','test_classtc.py','--html=test_class_report.html']
+    #os.path.split(os.path.realpath(__file__))
+    report_name=os.path.abspath(os.path.join('..','Reports','test_class_report.html'))
+    print(report_name)
+    args=['-q','test_classtc.py','--html='+report_name]
     pytest.main(args)

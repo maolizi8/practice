@@ -1,7 +1,7 @@
 '''
 Created on 2017-07-22
 
-@author: lxl
+@author: gql
 '''
 import pytest
 import os
