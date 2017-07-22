@@ -9,4 +9,4 @@ def test_main():
     assert True==False
 
 if __name__ == '__main__':
-    pytest.main()
+    pytest.main('test_dirtc.py')

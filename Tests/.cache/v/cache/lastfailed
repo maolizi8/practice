@@ -1,5 +1,3 @@
 {
-  "test_classtc.py::TestClass::()::test_two": true,
-  "test_dirtc.py::test_main": true,
-  "test_main.py::test_main": true
+  "test_dirtc.py::test_main": true
 }

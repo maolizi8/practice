@@ -230,7 +230,7 @@ function filter_table(elem) {
 }
 </script>
 	<p>
-		Report generated on 22-Jul-2017 at 11:52:18 by<a
+		Report generated on 22-Jul-2017 at 12:54:49 by<a
 			href="https://pypi.python.org/pypi/pytest-html"> pytest-html</a>
 		v1.15.1
 	</p>
@@ -315,13 +315,15 @@ function filter_table(elem) {
 			<tr>
 				<td class="extra" colspan="4">
 					<div class="log">
-						self = &lt;Tests.test_classtc.TestClass object at 0x0226E6B0&gt;<br />
-						<br /> def test_two(self):<br /> print(&#x27;two&#x27;)<br /> x =
-						&quot;hello&quot;<br />&gt; assert hasattr(x, &#x27;check&#x27;)<br />
+						self = &lt;Tests.test_classtc.TestClass object at 0x02283850&gt;<br />
+						<br /> def test_two(self):<br />
+						&#x27;&#x27;&#x27;测试类的用例2&#x27;&#x27;&#x27;<br />
+						print(&#x27;two&#x27;)<br /> x = &quot;hello&quot;<br />&gt;
+						assert hasattr(x, &#x27;check&#x27;)<br />
 						<span class="error">E AssertionError: assert False</span><br />
 						<span class="error">E + where False =
 							hasattr(&#x27;hello&#x27;, &#x27;check&#x27;)</span><br />
-						<br />Tests\test_classtc.py:18: AssertionError<br />-----------------------------
+						<br />Tests\test_classtc.py:21: AssertionError<br />-----------------------------
 						Captured stdout call -----------------------------<br />two
 					</div>
 				</td>
@@ -354,9 +356,10 @@ function filter_table(elem) {
 			<tr>
 				<td class="extra" colspan="4">
 					<div class="log">
-						def test_main():<br />&gt; assert 5 != 5<br />
+						def test_main():<br /> &#x27;&#x27;&#x27;测试方法的用例&#x27;&#x27;&#x27;<br />&gt;
+						assert 5 != 5<br />
 						<span class="error">E assert 5 != 5</span><br />
-						<br />Tests\test_main.py:10: AssertionError<br />
+						<br />Tests\test_main.py:11: AssertionError<br />
 					</div>
 				</td>
 			</tr>
