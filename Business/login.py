@@ -26,7 +26,7 @@ def login_via_account(selenium,account):
     with open('cookies.json','w') as f:
         f.write(jsonCookies)
     disp_name=selenium.find_element_by_css_selector("#logininfo>span").text
-    selenium.quit()
+    #selenium.quit()
     print(disp_name)
 
 def login_via_cookie(selenium):
@@ -58,5 +58,5 @@ if __name__ == '__main__':
     driver=webdriver.Chrome()
     driver.maximize_window()
     driver.implicitly_wait(20)
-    #login_via_account(driver,account)
-    login_via_cookie(driver)
+    login_via_account(driver,account)
+    #login_via_cookie(driver)

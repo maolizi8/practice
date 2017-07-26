@@ -2,12 +2,13 @@
 @author: gql
 '''
 from selenium import webdriver
-import login
+from login import login_via_cookie
+
 from time import sleep
 
 def add_to_shop_cart(selenium):
     login_via_cookie(selenium)
-    selenium.get("http://www.111.com.cn/product/972682.html")
+    selenium.get("http://www.111.com.cn/product/50007206.html")
     sleep(2)
     print(selenium.find_element_by_class_name("cart_num").text)
     print(selenium.find_element_by_css_selector("#rightFloat>a[title=\"购物车\"]").text)

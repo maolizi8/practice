@@ -14,6 +14,7 @@ def test_bd(selenium):
     '''测试fixture: selenium'''
     selenium.get('http://www.baidu.com')
     sleep(2)
+    selenium.quit()
 
 
 if __name__ == '__main__':
