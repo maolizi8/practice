@@ -9,7 +9,7 @@
 > * pip install -U pytest 
 > * pip install -U pytest-html
 > * pip install -U pytest-rerunfailures
-> * 等等
+> * pip install -U pytest-selenium
 
 ## 练习网站
 
