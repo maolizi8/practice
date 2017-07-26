@@ -5,11 +5,11 @@
 > * 此处使用python3.6（安装请勾选pip）
 > * 配置环境变量
 > * 安装依赖包:
-> * pip install selenium
+> * pip install -U selenium
 > * pip install -U pytest 
 > * pip install -U pytest-html
 > * pip install -U pytest-rerunfailures
-> * 等等
+> * pip install -U pytest-selenium
 
 ## 练习网站
 
