@@ -46,7 +46,8 @@ def login_via_cookie(selenium):
         })
     sleep(2)
     # 再次访问页面，便可实现免登陆访问
-    selenium.get('http://www.111.com.cn/')
+    selenium.get("http://www.111.com.cn/")
+    selenium.refresh()
     sleep(2)
     disp_name = selenium.find_element_by_css_selector("#logininfo>span").text
     #selenium.quit()
