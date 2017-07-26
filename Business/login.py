@@ -27,7 +27,7 @@ def login_via_account(selenium,account):
         f.write(jsonCookies)
     disp_name=selenium.find_element_by_css_selector("#logininfo>span").text
     #selenium.quit()
-    print(disp_name)
+    return disp_name
 
 def login_via_cookie(selenium):
     selenium.get("http://www.111.com.cn/")
@@ -55,7 +55,7 @@ def login_via_cookie(selenium):
 
 
 if __name__ == '__main__':
-    account=['13817023324','123456']
+    account=['13000000000','123456']
     driver=webdriver.Chrome()
     driver.maximize_window()
     driver.implicitly_wait(20)
