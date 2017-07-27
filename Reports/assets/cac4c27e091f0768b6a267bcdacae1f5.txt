@@ -1,0 +1,151 @@
+[2.007][INFO]: COMMAND InitSession {
+   "capabilities": {
+      "alwaysMatch": {
+         "browserName": "chrome",
+         "chromeOptions": {
+            "args": [  ],
+            "extensions": [  ]
+         },
+         "platform": "ANY",
+         "version": ""
+      },
+      "firstMatch": [  ]
+   },
+   "desiredCapabilities": {
+      "browserName": "chrome",
+      "chromeOptions": {
+         "args": [  ],
+         "extensions": [  ]
+      },
+      "platform": "ANY",
+      "version": ""
+   }
+}
+[2.011][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "show_welcome_page": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[2.012][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[2.020][INFO]: Launching chrome: "C:\Users\geqiuli\AppData\Local\Google\Chrome\Application\chrome.exe" --disable-background-networking --disable-client-side-phishing-detection --disable-default-apps --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --disable-web-resources --enable-automation --enable-logging --ignore-certificate-errors --load-component-extension="C:\Users\geqiuli\AppData\Local\Temp\scoped_dir109368_11757\internal" --log-level=0 --metrics-recording-only --no-first-run --password-store=basic --remote-debugging-port=12741 --safebrowsing-disable-auto-update --test-type=webdriver --use-mock-keychain --user-data-dir="C:\Users\geqiuli\AppData\Local\Temp\scoped_dir109368_19464" data:,
+[2.666][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[3.704][INFO]: RESPONSE InitSession {
+   "acceptSslCerts": true,
+   "applicationCacheEnabled": false,
+   "browserConnectionEnabled": false,
+   "browserName": "chrome",
+   "chrome": {
+      "chromedriverVersion": "2.28.455520 (cc17746adff54984afff480136733114c6b3704b)",
+      "userDataDir": "C:\\Users\\geqiuli\\AppData\\Local\\Temp\\scoped_dir109368_19464"
+   },
+   "cssSelectorsEnabled": true,
+   "databaseEnabled": false,
+   "handlesAlerts": true,
+   "hasTouchScreen": false,
+   "javascriptEnabled": true,
+   "locationContextEnabled": true,
+   "mobileEmulationEnabled": false,
+   "nativeEvents": true,
+   "networkConnectionEnabled": false,
+   "pageLoadStrategy": "normal",
+   "platform": "Windows NT",
+   "rotatable": false,
+   "takesHeapSnapshot": true,
+   "takesScreenshot": true,
+   "~~~": "..."
+}
+[3.706][INFO]: COMMAND SetImplicitWait {
+   "ms": 10000.0,
+   "sessionId": "f70a6c9aac91916ee3a56826febd7010"
+}
+[3.706][INFO]: RESPONSE SetImplicitWait
+[3.708][INFO]: COMMAND MaximizeWindow {
+   "sessionId": "f70a6c9aac91916ee3a56826febd7010",
+   "windowHandle": "current"
+}
+[3.710][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[4.717][INFO]: Waiting for pending navigations...
+[4.745][INFO]: Done waiting for pending navigations. Status: ok
+[4.884][INFO]: RESPONSE MaximizeWindow
+[4.913][INFO]: COMMAND GetUrl {
+
+}
+[4.913][INFO]: Waiting for pending navigations...
+[4.929][INFO]: Done waiting for pending navigations. Status: ok
+[4.939][INFO]: Waiting for pending navigations...
+[4.940][INFO]: Done waiting for pending navigations. Status: ok
+[4.940][INFO]: RESPONSE GetUrl "data:,"
+[4.942][INFO]: COMMAND Screenshot {
+
+}
+[4.942][INFO]: Waiting for pending navigations...
+[4.943][INFO]: Done waiting for pending navigations. Status: ok
+[5.101][INFO]: Waiting for pending navigations...
+[5.102][INFO]: Done waiting for pending navigations. Status: ok
+[5.102][INFO]: RESPONSE Screenshot "iVBORw0KGgoAAAANSUhEUgAABVYAAAKWCAIAAAAtFFV/AAAQSElEQVR4nO3YwQ3AIBDAsNL9dz62AInYE+SdNTMfAAAA8Lr/dgAAAABwggUAAAAACRYAAAAAJFgAAAAAkGABAAAAQIIFAAAAAAkWAAAAACRYAAAAAJBgAQAAAECCBQAAAAAJFgAAAAAkWAAAAACQY..."
+[5.103][INFO]: COMMAND GetSource {
+
+}
+[5.103][INFO]: Waiting for pending navigations...
+[5.104][INFO]: Done waiting for pending navigations. Status: ok
+[5.107][INFO]: Waiting for pending navigations...
+[5.107][INFO]: Done waiting for pending navigations. Status: ok
+[5.107][INFO]: RESPONSE GetSource "\u003Chtml xmlns=\"http://www.w3.org/1999/xhtml\">\u003Chead>\u003C/head>\u003Cbody>\u003Cpre style=\"word-wrap: break-word; white-space: pre-wrap;\">\u003C/pre>\u003C/body>\u003C/html>"

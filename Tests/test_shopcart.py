@@ -8,14 +8,13 @@ import pytest
 import os
 from Business import login
 from Business import shop_cart
+from Tools.FilesOpr import get_info_from_txt
 
-testdata=[
-    (['13817023324','123456'])
-    ]
 
-@pytest.mark.parametrize("account",testdata)
-def test_addtoshopcart_login(selenium, account):
-    login.login_via_account(selenium, account)
+
+def test_addtoshopcart_login(selenium):
+    account_info=get_info_from_txt("../Datas/sensitive/account.txt")
+    login.login_via_account(selenium, account_info)
     selenium.refresh()
     before,after=shop_cart.add_to_shop_cart(selenium)
     assert int(after)==int(before)+1

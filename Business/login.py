@@ -7,7 +7,7 @@ from time import sleep
 import json
 import os
 
-print(os.path.realpath(__file__))
+print("login print:",os.path.realpath(__file__))
 
 def login_via_account(selenium,account):
     selenium.get("http://www.111.com.cn/")
