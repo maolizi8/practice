@@ -11,6 +11,7 @@
 > * pip install -U pytest-rerunfailures
 > * pip install -U pytest-selenium
 
-## 练习网站
+## 代码说明
+由于涉及敏感账号信息，文件夹：Datas、Reports 并未上传
 
 
