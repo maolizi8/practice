@@ -1,10 +1,13 @@
+# -*- coding: utf-8 -*-
 '''
 @author: gql
 '''
-from selenium import webdriver
+
 from time import sleep
-import os
 import json
+import os
+
+print(os.path.realpath(__file__))
 
 def login_via_account(selenium,account):
     selenium.get("http://www.111.com.cn/")
@@ -18,13 +21,14 @@ def login_via_account(selenium,account):
     pwd=selenium.find_element_by_id("userPass")
     pwd.clear()
     pwd.send_keys(account[1])
+    sleep(10)
     selenium.find_element_by_id("btnSubmit").click()
     sleep(2)
     print(selenium.current_url)
-    dictCookies=selenium.get_cookies()
-    jsonCookies=json.dumps(dictCookies)
-    with open('cookies.json','w') as f:
-        f.write(jsonCookies)
+    # dictCookies=selenium.get_cookies()
+    # jsonCookies=json.dumps(dictCookies)
+    # with open('cookies.json','w') as f:
+    #     f.write(jsonCookies)
     disp_name=selenium.find_element_by_css_selector("#logininfo>span").text
     #selenium.quit()
     return disp_name
@@ -55,6 +59,8 @@ def login_via_cookie(selenium):
 
 
 if __name__ == '__main__':
+    
+    from selenium import webdriver
     account=['13000000000','123456']
     driver=webdriver.Chrome()
     driver.maximize_window()
