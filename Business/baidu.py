@@ -1,4 +1,4 @@
-from selenium import webdriver
+
 from time import sleep
 
 
@@ -14,7 +14,8 @@ def bd_search(driver):
     return driver.title
 
 if __name__=="__main__":
+    from selenium import webdriver
     driver = webdriver.Chrome()
     driver.implicitly_wait(30)
     url='https://www.baidu.com/'
-    bd_search(driver,url)
+    bd_search(driver)

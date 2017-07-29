@@ -16,7 +16,6 @@ logging.basicConfig(level=logging.DEBUG)
 def test_baidu(selenium):
     log = logging.getLogger('test_1')
     baidu.bd_search(selenium)
-    #selenium.get("http://www.baidu.com")
     sleep(2)
     log.debug('after 2 sec')
     assert 1!=1
