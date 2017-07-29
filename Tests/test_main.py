@@ -14,7 +14,4 @@ def test_demo1():
     assert 5>4
     
 if __name__ == '__main__':
-    tc_dir=os.path.split(os.path.realpath(__file__))[0]
-    print(tc_dir)
-    
-    pytest.main(tc_dir)  # 指定测试目录
+    pass

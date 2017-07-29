@@ -228,7 +228,7 @@ function filter_table(elem) {
     not_found_message.hidden = !all_rows_hidden;
 }
 </script>
-    <p>Report generated on 27-Jul-2017 at 16:35:42 by<a href="https://pypi.python.org/pypi/pytest-html"> pytest-html</a> v1.15.1</p>
+    <p>Report generated on 29-Jul-2017 at 20:17:20 by<a href="https://pypi.python.org/pypi/pytest-html"> pytest-html</a> v1.15.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -236,7 +236,7 @@ function filter_table(elem) {
         <td>Chrome</td></tr>
       <tr>
         <td>JAVA_HOME</td>
-        <td>C:\Program Files (x86)\Java\jdk1.8.0_121</td></tr>
+        <td>C:\Program Files\Java\jdk1.8.0_121</td></tr>
       <tr>
         <td>Packages</td>
         <td>{&apos;pytest&apos;: &apos;3.1.3&apos;, &apos;py&apos;: &apos;1.4.34&apos;, &apos;pluggy&apos;: &apos;0.4.0&apos;}</td></tr>
@@ -250,8 +250,8 @@ function filter_table(elem) {
         <td>Python</td>
         <td>3.6.1</td></tr></table>
     <h2>Summary</h2>
-    <p>0 tests ran in 35.12 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>, <input checked="true" class="filter" data-test-result="rerun" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="rerun">0 rerun</span>
+    <p>1 tests ran in 15.65 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>, <input checked="true" class="filter" data-test-result="rerun" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="rerun">0 rerun</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -261,4 +261,15 @@ function filter_table(elem) {
           <th class="sortable numeric" col="duration">Duration</th>
           <th>Links</th></tr>
         <tr hidden="true" id="not-found-message">
-          <th colspan="4">No results found. Try to check the filters</th></tr></thead></table></body></html>
+          <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_browser.py::test_baidu</td>
+          <td class="col-duration">4.19</td>
+          <td class="col-links"><a class="url" href="https://www.baidu.com/" target="_blank">URL</a> <a class="image" href="assets/969723b521d70b00fde051f144643f6d.png" target="_blank">Screenshot</a> <a class="text" href="assets/1d3fb5a45aeb126f59d686bfeb4e6aca.txt" target="_blank">HTML</a> <a class="text" href="assets/0b67b964c95ff8d7a474992b0a0508fd.txt" target="_blank">Driver Log</a> <a class="text" href="assets/1e7677e4246a6ca3840e49c398913287.txt" target="_blank">Browser Log</a> <a class="text" href="assets/cc2a8cfb70ca7308e74871bc40bbfed2.txt" target="_blank">Driver Log</a> </td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="image"><a href="assets/969723b521d70b00fde051f144643f6d.png"><img src="assets/969723b521d70b00fde051f144643f6d.png"/></a></div>
+            <div class="log">selenium = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session=&quot;2d189418ea5b1724a97d7d6e2953c9b4&quot;)&gt;<br/><br/>    def test_baidu(selenium):<br/>        log = logging.getLogger(&#x27;test_1&#x27;)<br/>        selenium.get(&quot;http://www.baidu.com&quot;)<br/>        sleep(2)<br/>        log.debug(&#x27;after 2 sec&#x27;)<br/>&gt;       assert 1!=1<br/><span class="error">E       assert 1 != 1</span><br/><br/>test_browser.py:19: AssertionError<br/>------------------------------- pytest-selenium --------------------------------<br/>URL: https://www.baidu.com/
+Driver log: C:\Users\lxl\AppData\Local\Temp\pytest-of-lxl\pytest-14\test_baidu0\driver.log</div></td></tr></tbody></table></body></html>

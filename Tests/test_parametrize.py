@@ -29,5 +29,5 @@ def test_bd_search(selenium,search_words,expected):
 if __name__=="__main__":
     report_name = os.path.abspath(os.path.join('..', 'Reports', 'test_parametrize_report.html'))
     print(report_name)
-    args = ['-q','test_parametrize.py','--driver=Chrome', '--html=' + report_name]
+    args = ['-q','test_parametrize.py','--driver=Chrome', '--html=' + report_name,'--self-contained-html']
     pytest.main(args)

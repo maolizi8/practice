@@ -34,5 +34,5 @@ def test_timedistance_v2(a, b, expected):
 if __name__ == '__main__':
     report_name = os.path.abspath(os.path.join('..', 'Reports', 'test_time_report.html'))
     print(report_name)
-    args = ['-q', 'test_time.py', '--html=' + report_name]
+    args = ['-q', 'test_time.py', '--html=' + report_name,'--self-contained-html']
     pytest.main(args)

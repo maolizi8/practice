@@ -25,5 +25,5 @@ if __name__ == '__main__':
     #os.path.split(os.path.realpath(__file__))
     report_name=os.path.abspath(os.path.join('..','Reports','test_class_report.html'))
     print(report_name)
-    args=['-q','test_classtc.py','--html='+report_name]
+    args=['-q','test_classtc.py','--html='+report_name,'--self-contained-html']
     pytest.main(args)

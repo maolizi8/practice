@@ -14,5 +14,5 @@ if __name__ == '__main__':
     timestamp=time.strftime('%Y%m%d_%H%M%S')
     report_name=os.path.join(report_dir,'all_'+timestamp+'.html')
     print(report_name)
-    args=['-q',tc_dir,'--driver=Chrome','--html='+report_name]
+    args=['-q',tc_dir,'--driver=Chrome','--html='+report_name,'--self-contained-html']
     pytest.main(args)  # 指定测试目录
