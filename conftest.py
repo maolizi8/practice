@@ -4,16 +4,10 @@ import sys
 from datetime import datetime
 from py.xml import html
 
-<<<<<<< HEAD
 
 projname='python_selenium'
 root_dir=os.path.abspath(sys.argv[0]).split(projname)[0]+projname+os.sep
 
-=======
-projname='python_selenium'
-root_dir=os.path.abspath(sys.argv[0]).split(projname)[0]+projname+os.sep
-
->>>>>>> fb39ae436d8d77b07cd16f79538a7ac24ba77dc0
 # import logging
 # import time
 # rootdir=os.path.abspath(sys.argv[0]).split('python_selenium')[0]
