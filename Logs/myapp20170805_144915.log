@@ -1,0 +1,10 @@
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:52694/session {"capabilities": {"firstMatch": [], "alwaysMatch": {"browserName": "chrome", "version": "", "platform": "ANY", "chromeOptions": {"extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "chromeOptions": {"extensions": [], "args": []}}}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:52694/session/34decc763b40d2199c38c05ab96170fe/timeouts/implicit_wait {"ms": 10000.0, "sessionId": "34decc763b40d2199c38c05ab96170fe"}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:52694/session/34decc763b40d2199c38c05ab96170fe/window/current/maximize {"windowHandle": "current", "sessionId": "34decc763b40d2199c38c05ab96170fe"}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:52694/session/34decc763b40d2199c38c05ab96170fe/url {"url": "http://www.baidu.com", "sessionId": "34decc763b40d2199c38c05ab96170fe"}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:DELETE http://127.0.0.1:52694/session/34decc763b40d2199c38c05ab96170fe {"sessionId": "34decc763b40d2199c38c05ab96170fe"}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
