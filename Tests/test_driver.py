@@ -1,6 +1,4 @@
-import pytest
-import os
-import time
+
 from time import sleep
 
 def test_bd(selenium):
@@ -10,9 +8,13 @@ def test_bd(selenium):
 
 
 if __name__ == '__main__':
+    import pytest
+    import os
+    import time
     stamp=time.strftime('%Y%m%d_%H%M%S')
-    report_name = os.path.abspath(os.path.join('..', 'Reports', 'test_driver_report'+stamp+'.html'))
-
+    file_name=os.path.basename(__file__)
+    print(file_name)
+    report_name=os.path.abspath(os.path.join('..','Reports',file_name.split('.')[0]+'_'+stamp+'.html'))
     print(report_name)
-    args = ['test_driver.py','--driver=Chrome','--html=' + report_name,'--self-contained-html']
+    args = [file_name,'--driver=Chrome','--html='+report_name,'--self-contained-html']
     pytest.main(args)

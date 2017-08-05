@@ -12,6 +12,10 @@
 > * pip install -U pytest-selenium
 
 ## 代码说明
-由于涉及敏感账号信息，文件夹：Datas、Reports 并未上传
+由于涉及敏感账号信息，某些文件未上传
+> conf.ini 内容自行填写
+> [smtp]
+> username = aaa
+> password = bbb
 
 

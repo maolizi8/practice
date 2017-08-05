@@ -3,10 +3,7 @@ Created on 2017年7月29日
 
 @author: lxl
 '''
-import pytest
-import time
 from time import sleep
-import os
 import logging
 from Business import baidu
  
@@ -21,9 +18,13 @@ def test_baidu(selenium):
     assert 1!=1
 
 if __name__ == '__main__':
+    import pytest
+    import os
+    import time
     stamp=time.strftime('%Y%m%d_%H%M%S')
-    report_name = os.path.abspath(os.path.join('..', 'Reports', 'test_browser_report'+stamp+'.html'))
-
+    file_name=os.path.basename(__file__)
+    print(file_name)
+    report_name=os.path.abspath(os.path.join('..','Reports',file_name.split('.')[0]+'_'+stamp+'.html'))
     print(report_name)
-    args = ['-s','test_browser.py','--driver=Chrome','--html='+report_name,'--self-contained-html']
+    args = [file_name,'--driver=Chrome','--html='+report_name,'--self-contained-html']
     pytest.main(args)
