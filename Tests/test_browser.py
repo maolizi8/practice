@@ -1,7 +1,7 @@
 '''
 Created on 2017年7月29日
 
-@author: lxl
+@author: gql
 '''
 from time import sleep
 import logging

@@ -1,10 +1,14 @@
+'''
+Created on 2017年7月29日
 
-from time import sleep
+@author: gql
+'''
+from Business import baidu
 
 def test_bd(selenium):
-    '''测试fixture: selenium'''
-    selenium.get('http://www.baidu.com')
-    sleep(2)
+    '''测试百度搜索'''
+    title=baidu.bd_search(selenium)
+    assert 'python_' in title
 
 
 if __name__ == '__main__':

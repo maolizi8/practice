@@ -1,7 +1,7 @@
 '''
 Created on 2017年8月5日
 
-@author: lxl
+@author: gql
 '''
 from smtplib import SMTP_SSL
 from email.header import Header
@@ -16,8 +16,8 @@ def mailSend(mail):
     username=config.get("smtp", "username")
     password=config.get("smtp", "password")
     mail_info = {
-        "from": "172561117@qq.com",
-        "to": "635961515@qq.com",
+        "from": username,
+        "to": username,
         "hostname": "smtp.qq.com",
         "username": username,
         "password": password,
