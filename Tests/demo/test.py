@@ -1,18 +1,14 @@
 '''
-Created on 2017年7月29日
+Created on 2017年8月6日
 
-@author: gql
+@author: lxl
 '''
-from Business import baidu
-
-def test_bd(selenium):
-    '''测试百度搜索'''
-    title=baidu.bd_search(selenium)
-    assert 'python_' in title
-
-
+import pytest
+@pytest.mark.capabilities(foo='bar')
+def test_capabilities(selenium):
+    selenium.get('http://www.example.com')
+    
 if __name__ == '__main__':
-    import pytest
     import os
     import time
     from conftest import root_dir
@@ -22,5 +18,5 @@ if __name__ == '__main__':
     print(file_name)
     report_name=os.path.abspath(report_dir+file_name.split('.')[0]+'_'+stamp+'.html')
     print(report_name)
-    args = [file_name,'--driver=Chrome','--html='+report_name,'--self-contained-html']
+    args = ['-v',file_name,'--driver=Chrome','--html='+report_name,'--self-contained-html']
     pytest.main(args)

@@ -1,7 +1,6 @@
 import pytest
 import os
 import sys
-from datetime import datetime
 from py.xml import html
 
 
