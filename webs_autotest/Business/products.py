@@ -1,7 +1,7 @@
 '''
 Created on 2017年7月27日
 
-@author: geqiuli
+@author: gql
 '''
 from time import sleep
 
