@@ -1,0 +1,28 @@
+# test reports
+/report/
+
+# Python
+__pycache__
+*.pyc
+.pytest_cache
+
+# Eclipse
+.classpath
+.project
+.settings
+.pydevproject
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+
+# npm
+node_modules
