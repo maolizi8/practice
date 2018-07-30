@@ -38,7 +38,4 @@ def mailSend(mail):
     smtp.quit()
     
 if __name__ == '__main__':
-    from Tools.FilesOpr import get_newest_file
-    file_name=get_newest_file()
-    with open(file_name,'r',encoding='utf-8') as f:
-        mailSend(f.read())
+    pass

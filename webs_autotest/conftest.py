@@ -4,16 +4,8 @@ import sys
 from py.xml import html
 
 
-projname='python_selenium'
-root_dir=os.path.abspath(sys.argv[0]).split(projname)[0]+projname+os.sep
-
-# import logging
-# import time
-# rootdir=os.path.abspath(sys.argv[0]).split('python_selenium')[0]
-# 
-# logging.basicConfig(level=logging.DEBUG,
-#                 filename=rootdir+'\\python_selenium\\Logs\\myapp'+time.strftime('%Y%m%d_%H%M%S')+'.log',
-#                 filemode='w')
+projname='webs_autotest'
+root_dir=os.path.abspath('conftest.py').split(projname)[0]+projname+os.sep
 
 @pytest.fixture
 def selenium(selenium):

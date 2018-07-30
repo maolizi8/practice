@@ -8,9 +8,10 @@ from os import path
 from conftest import root_dir
 
 
-def get_info_from_txt(file_name):
+def txt_list(file_name):
     arr=[]
-    with open(file_name,'r') as f:
+    file_path=root_dir+os.sep+'datas'+os.sep+file_name
+    with open(file_path,'r',encoding='utf-8') as f:
         for line in f.readlines():
             arr.append(line.strip())
     return arr

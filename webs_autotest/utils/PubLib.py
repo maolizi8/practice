@@ -8,8 +8,23 @@ import os
 from email.mime.text import MIMEText
 from email.header import Header
 import smtplib
+import pytest
 import time
+from conftest import root_dir
 
+
+def run_testcase(casefile,driver='Chrome',options=[]):
+    '''运行测试用例
+    @param tcname: 可以是文件名（名字含.py）、文件夹
+    @param driver: 浏览器，不支持Remote'''
+    casename=casefile[:-3]
+    report_dir=root_dir+'reports'+os.sep+casename+os.sep
+    report_path=report_dir+casename+'_'+time.strftime('%Y%m%d_%H%M%S')+'.html'
+    args=[casefile,'--driver='+driver,'--html=' + report_path,'--self-contained-html']
+    for opt in options:
+        args.append(opt)
+    pytest.main(args)
+    
 def send_mail(file_new,mail_to):
     with open(file_new,'rb') as f:
         mail_body = f.read()
