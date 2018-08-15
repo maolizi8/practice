@@ -7,3 +7,5 @@
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
     WebView.setWebContentsDebuggingEnabled(true);
 }
+
+### 2. Android版本4.4+
