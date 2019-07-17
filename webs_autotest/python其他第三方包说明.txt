@@ -1,0 +1,37 @@
+【环境要求】
+1. windows7/windows10/mac，部分已测试通过
+2. python3.6+，请使用64位，配置好环境变量
+3. 浏览器：推荐使用chrome
+4. 编译器：推荐使用eclipse
+
+【driver】
+请查看浏览器及其对应的版本对应关系，下载正确的driver，放到python安装目录下即可
+2019年已更新的[Chrome版本与chromedriver]版本对应关系：https://blog.csdn.net/yoyocat915/article/details/80580066
+下载chromedriver：http://npm.taobao.org/mirrors/chromedriver
+
+【UI自动化工具包】
+pip install selenium
+【框架——pytest】
+按照最新版即可，某些低版本的框架本身存在bug，较高版本的兼容性更好。
+
+【pytest测试框架】
+pip install pytest 
+pip install pytest-selenium
+（会自动安装：pytest-html、pytest-variables、pytest-matadata、pytest-html）
+pip install pytest-rerunfailures
+
+***********************************************************************
+【其他第三方包】
+
+pip install requests	# 请求HTTP接口
+pip install xlrd	# 读excel文件
+pip install pymysql	# 连接操作mysql数据库
+pip install pillow	#PIL，图像处理
+pip install tensorflow		# AI智能
+pip install beautifulsoup4
+
+【图片识别】opencv版本需匹配，按顺序安装
+pip install opencv-python==3.4.2.16 	#cv2
+pip install opencv-contrib-python==3.4.2.16
+
+***********************************************************************

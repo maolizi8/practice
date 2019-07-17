@@ -1,0 +1,81 @@
+python查询oracle数据库--版本匹配&sql语句结尾不要分号
+
+
+Python3安装cx_Oracle连接oracle数据库实操总结
+1.【弄清版本，最重要！！！】
+
+首先安装配置时，必须把握一个点，就是版本一致！包括：系统版本，python版本，oracle客户端的版本，cx_Oracle的版本，然后安装配置就容易了！
+
+如果已经安装Python，查看你安装的Python版本是多少位的：
+
+
+当然，你64位的操作系统也是可以安装32位的开发环境。反之则不行！切记！
+
+oracle客户端的版本，cx_Oracle的版本，要与Python版本和位数对应：
+
+比如：
+
+Python版本：Python3.4.3   32位；
+
+cx_Oracle的版本：cx_Oracle-5.2-11g.win32-py3.4
+
+oracle客户端的版本：instantclient-basic-win32-11.2.0.1.0；
+
+这里还有三个注意点：
+
+版本位数对应，都是32位；
+
+cx_Oracle和python版本对应，都是3.4；
+
+cx_Oracle和instantclient版本对应，都是11；   、
+
+再次说明（别嫌我啰嗦，弄明白很重要）：比如，我的系统是win7 64位，python版本却是32位的，所以下载安装的Oracle Client 也是32位 11g的，相应的cx_Oracle 也要是32位11g的,当然也要注意python的版，本python2.X还是python3.X，也要下相应的版本的。
+
+这一点弄明白之后，我们就要准备安装了。
+
+（1）cx_Oracle未安装
+cx_Oracle安装
+下载地址：https://pypi.python.org/pypi/cx_Oracle/5.3 下载低版本cx_Oracle版本 
+我是下载cx_Oracle-5.3-11g.win32-py3.6.exe，下载后直接双击安装，就ok了。
+
+不建议直接使用pip install cx_Oracle命令安装，因为版本问题容易报错。cx_Oracle 报错：cx_Oracle.DatabaseError: DPI-1050: Oracle Client library must be at version 11.2，这就是cx_Oracle版本太高引起的。
+
+（2）缺少instanctclient
+oracle 客户端
+下载地址：http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html
+
+把下载的文件解压，复制oci，oraocci11，oraociei11的3个DLL粘贴到你的PY目录的Libs/site-packages文件夹下面。
+
+python3.4连接oracle数据库测试代码：
+
+import cx_Oracle
+ 
+conn = cx_Oracle.connect('用户名/密码@主机ip地址/orcl')   #用自己的实际数据库用户名、密码、主机ip地址 替换即可
+curs=conn.cursor()
+sql='SELECT * FROM 。。。' #sql语句
+rr=curs.execute (sql)
+row=curs.fetchone()
+print(row[0])
+curs.close()
+conn.close()
+　　
+补充一点：
+oracle数据库服务端版本如果是64位，你的机子上安装的客户端位数是32还是64，都不影响使用。
+
+本机上不需要安装oracle服务端。
+
+
+2.【都是分号惹的祸(ORA-00911: invalid character)】
+
+2008年04月21日 09:29:00 bruesz 阅读数：39501
+ 版权声明：欢迎转载，转载请注明作者和出处	https://blog.csdn.net/bruesz/article/details/2310671
+今天在写SQL查询Oracle中的数据时遇到一个问题。在一般的SQL查询分析器中写好的SQL语句（运行一切正常），扔到用C#写的程序中就报错。错误代码如下：
+
+System.Data.OleDb.OleDbException:One or more errors occurred during processing of command.
+ORA-00911: invalid character at...
+
+检查了半天，实在是没找到任何SQL错误的原因，（本来怀疑是字符转码的问题，后来给排除了）；最后，终于在网上查到了答案，原来“都是分号惹的祸”！
+
+我一般写SQL的时候都喜欢在每个语句结尾加上":"，我想这也是一般写SQL的程序员的习惯。因为很多SQL的查询分析其时都会将这个分号当成一个语句的结束。但是，其实在正式执行的时候，是不能将这个分号扔到Oracle的解析器中的，因为Oracle的语法解析器特别严格，就会报出以上的错误出来，解决方法也很简单，去掉分号就可以了。
+
+以上的问题适用于任何用程序书写的Oracle数据查询，看起来有时候习惯也会害死人的。

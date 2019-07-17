@@ -3,7 +3,7 @@ Created on 2017年7月29日
 
 @author: gql
 '''
-from src.Homepage import Homepage
+from business.Homepage import Homepage
 import pytest
 
 
@@ -14,7 +14,6 @@ def test_search(selenium):
     t=h.baidu_search('python')
     assert 'python' in t
 
-if __name__=='__main__':
-    import os
-    from utils.PubLib import run_testcase
-    run_testcase(os.path.basename(__file__))
+if __name__=="__main__":
+    from public.tests import run_case
+    run_case(__file__,'bd_1')

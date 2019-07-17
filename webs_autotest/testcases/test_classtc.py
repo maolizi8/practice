@@ -18,8 +18,8 @@ class TestClass:
         x = "hello"
         assert hasattr(x, 'check')
         
-if __name__ == '__main__':
-    import os
-    from utils.PubLib import run_testcase
-    run_testcase(os.path.basename(__file__))
+if __name__=="__main__":
+    from public.PubLib import run_testcase
+    run_testcase(__file__)
+    #run_testcase(os.path.basename(__file__))
     

@@ -31,6 +31,6 @@ def test_timedistance_v2(a, b, expected):
     diff = a - b
     assert diff == expected
 
-if __name__ == '__main__':
-    from utils.PubLib import run_testcase
-    run_testcase(os.path.basename(__file__))
+if __name__=="__main__":
+    from public.tests import run_case
+    run_case(__file__,'bd_1')

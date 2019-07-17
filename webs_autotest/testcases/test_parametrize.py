@@ -28,6 +28,5 @@ def test_bd_search(selenium,search_words,expected):
 
 
 if __name__=="__main__":
-    import os
-    from utils.PubLib import run_testcase
-    run_testcase(os.path.basename(__file__))
+    from public.tests import run_case
+    run_case(__file__,'bd_1')
