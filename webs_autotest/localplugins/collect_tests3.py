@@ -195,7 +195,7 @@ def get_module_testcase(package,pyfile,run_env,platform,coll_id,conn=None,module
             #print('    ',func.__doc__)
             #testcases.append(func.__name__)
             
-            py_name=file_path+" :"+func.__name__
+            py_name=file_path+" ::"+func.__name__
             if conn:
                 
                 if module_id:
