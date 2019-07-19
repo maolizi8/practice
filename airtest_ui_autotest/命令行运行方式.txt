@@ -1,0 +1,5 @@
+python -m airtest run untitled.air --device Android://127.0.0.1:5037/46709b100104
+
+
+python -m airtest run test_usercenter.air --device Android://127.0.0.1:5037/46709b100104
+python -m airtest run test_usercenter.air --device Android:///
