@@ -7,6 +7,7 @@ import sys
 import os
 import importlib
 import inspect
+import re
 import platform 
 from public import mysql_opr
 from public import files
@@ -155,7 +156,8 @@ def get_module_testcase(package,pyfile,run_env,platform,coll_id,conn=None,module
     print('module.__name__: ',module.__name__)
     file_path=module.__name__.replace('.','/')+'.py'
     #print('file_path: ',file_path)
-    
+    #print('module: ',module.__dict__)
+    #print('module: ',help(module))
     #file_path=package.replace('.',os.sep)+os.sep+module.__name__
     #print('sourcecode:')
     #print(inspect.getsource(module))
@@ -196,8 +198,15 @@ def get_module_testcase(package,pyfile,run_env,platform,coll_id,conn=None,module
             #testcases.append(func.__name__)
             
             py_name=file_path+" ::"+func.__name__
+            
+            print('    func content:')
+            #print(inspect.getsource(func))
+            assert_search=re.findall('assert ',inspect.getsource(func))
+            assert_num=len(assert_search)
+            print('    func assert_num:',assert_num)
+            
             if conn:
-                
+                print('------------------------------')
                 if module_id:
                     business_module=module_id
                 else:
@@ -210,23 +219,25 @@ def get_module_testcase(package,pyfile,run_env,platform,coll_id,conn=None,module
                     print('已有此用例，更新：',py_name)
                     sql1='''UPDATE auto_ui_testcase SET py_desc='{0}',cart_order_oprs='{1}',
                             py_marks='{2}',run_env='{3}',platform='{4}',py_skip_reason='{5}',
-                            business_module='{6}',tapd_id='{7}',tapd_proj='{8}',update_version='{9}'
+                            business_module='{6}',tapd_id='{7}',tapd_proj='{8}',update_version='{9}',
+                            assert_num={12}
                             WHERE py_name='{10}' AND collection={11}
-                            '''.format(func.__doc__, cart_order_oprs,
+                            '''.format(func.__doc__.replace('\'','"'), cart_order_oprs,
                                        ';'.join(pytestmark), run_env, platform, py_skip_reason,
                                        business_module, tapd_id, tapd_proj, current_time,
-                                       py_name,coll_id)
+                                       py_name,coll_id,assert_num)
                     mysql_opr.query_mysql2(conn,sql1)
                 else:
                     print('无此用例，新增：',py_name)
                     sql2='''INSERT INTO auto_ui_testcase(py_name,py_desc,py_module,cart_order_oprs,
                             py_marks,py_file,run_env,platform,collection,py_skip_reason,
-                            business_module,tapd_id,tapd_proj,update_version)
-                            VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}',{7},'{8}','{9}','{10}','{11}','{12}','{13}')
-                            '''.format(py_name, func.__doc__, module.__name__, cart_order_oprs,
+                            business_module,tapd_id,tapd_proj,update_version,assert_num)
+                            VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}',{7},'{8}','{9}','{10}','{11}','{12}','{13}','{14}')
+                            '''.format(py_name, func.__doc__.replace('\'','"'), module.__name__, cart_order_oprs,
                                        ';'.join(pytestmark), file_path, run_env, 
                                        platform, coll_id,py_skip_reason,
-                                       business_module, tapd_id, tapd_proj, current_time)
+                                       business_module, tapd_id, tapd_proj, current_time,assert_num)
+                    #print('sql2: ',sql2)
                     mysql_opr.query_mysql2(conn,sql2)
     
 def get_pyfiles_in_packages(root_dir,package,run_env,platform,coll_id,conn=None,module_id=None,find_sub=True):
