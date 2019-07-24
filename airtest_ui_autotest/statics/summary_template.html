@@ -34,17 +34,12 @@
             <th width="300" class='details-col-msg'>案例名称</th>
             <th class='details-col-msg'>执行结果</th>
         </tr>
-        
+        {% for r in results %}
         <tr width="600">
-            <td class='details-col-elapsed'><a href="log/test_homepage/log.html" target="view_window">test_homepage</a></td>
-            <td class="success">成功</td>
+            <td class='details-col-elapsed'><a href="{{r.name}}/log.html" target="view_window">{{r.name}}</a></td>
+            <td class="{{'success' if r.result else 'fail'}}">{{"成功" if r.result else "失败"}}</td>
         </tr>
-        
-        <tr width="600">
-            <td class='details-col-elapsed'><a href="log/test_usercenter/log.html" target="view_window">test_usercenter</a></td>
-            <td class="success">成功</td>
-        </tr>
-        
+        {% endfor %}
     </table>
 </div>
 </body>
