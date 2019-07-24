@@ -3,7 +3,7 @@ Created on 2019年7月19日
 
 @author: geqiuli
 '''
-from airtest_runner import AirtestCase, run_script
+from local_plugins.airtest_runner import AirtestCase, run_script
 from argparse import *
 from airtest.core.api import *
 import airtest.report.report as report
